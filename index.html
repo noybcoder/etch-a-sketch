@@ -4,29 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Londrina+Sketch&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <script defer src="script.js"></script>
     <title>Etch A Sketch</title>
 </head>
 <body>
-    <section>
-        <header>
-            <h1>Etch A Sketch</h1>
-        </header>
-        <main>
-            <div class="color-buttons">
-                <input type="color" id="selector"></input>
-                <button type="button" id="randomizer">randomizer</button>
-                <button type="button" id="darkener">gradient</button>
+    <main>
+        <section class="left-container">
+            <div class="buttons-wrapper">
+                <div>
+                    <label for="selector" id="selector-label">Select:</label>
+                    <input type="color" id="selector" name="selector">    
+                </div>
+                <button type="button" id="randomizer">Random</button>
+                <button type="button" id="darkener">Gradient</button>
+                <button type="button" id="eraser">Erase</button>
+                <div>
+                    <label for="dimension" id="dimension-label">100 x 100</label>
+                    <input type="range" id="dimension" name="dimension">
+                </div>
+                <button type="button" id="sweeper">Clear</button>
             </div>
-            <div class="grid-container">
-                <div class="grid"></div>
+        </section>
+        <section class="right-container">
+            <header>
+                <h1>Etch A Sketch</h1>
+            </header>
+            <div class="grid-wrapper"></div>
+            <div class="knob-wrapper">
+                <div class="knob"></div>
+                <div class="knob"></div>
             </div>
-            <div class="clear-buttons">
-                <button type="reset" id="eraser">eraser</button>
-                <button type="button" id="">pixel</button>
-                <button type="reset" id="clear">clear</button>
-            </div>
-        </main>
-    </section>
+        </section>
+    </main>
 </body>
 </html>
