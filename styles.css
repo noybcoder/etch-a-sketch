@@ -6,71 +6,147 @@ main {
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: center;
-    gap: 150px;
+    gap: 100px;
 }
 
 .left-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 200px;
-    height: 400px;
+    width: 225px;
+    height: 500px;
     font-family:'Londrina Sketch', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 900;
     background-color: rgb(206, 27, 30);
     color: rgb(197, 147, 57);
+    border: 4px solid rgb(139, 0, 0);
     border-radius: 15px;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 
 .buttons-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-
+    gap: 25px;
 }
 
 button {
-    width: 120px;
-    height: 50px;
+    box-sizing: border-box;
+    width: 160px;
+    height: 60px;
     font-family:'Londrina Sketch', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 900;
     color: rgb(197, 147, 57);
     background-color: rgb(240, 239, 247);
+    border: 4px solid rgb(139, 0, 0);
     border-radius: 10px;
     padding: 10px;
 }
 
 .selector-wrapper {
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
     box-sizing: border-box;
-    width: 120px;
-    height: 50px;
-    border: 2px solid rgb(0, 0, 0);
+    width: 160px;
+    height: 60px;
     border-radius: 10px;
+    border: 4px solid rgb(139, 0, 0);
     background-color: rgb(240, 239, 247);
-    font-size: 22px;
+    font-size: 28px;
     padding: 10px;
+
 }
 
 .dimension-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 22px;
+    font-size: 28px;
     font-weight: 900;
 
 }
 
 #dimension {
-    width: 100px;
+    width: 160px;
 }
 
 #selector {
+    width: 30px;
+    height: 30px;
     border: none;
+}
+
+.right-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 10px;
+    width: 700px;
+    height: 650px;
+    background-color: rgb(206, 27, 30);
+    color: rgb(197, 147, 57);
+    font-family:'Londrina Sketch', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+    border: 4px solid rgb(139, 0, 0);
+    border-radius: 5%;
+}
+
+header {
+    margin-top: -20px;
+}
+
+.grid-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    width: 450px;
+    height: 450px;
+    margin-top: -20px;
+    background-color: rgb(240, 239, 247);
+    border: 4px solid rgb(139, 0, 0); 
+    border-radius: 5px;
+}
+
+.grid-cell {
+    box-sizing: border-box;
+    border: 1px solid rgb(197, 147, 57);
+}
+
+.knob-wrapper {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 450px;
+    margin-top: -20px;
+}
+
+.knob {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: rgb(240, 239, 247);
+    border-top: 8px solid rgb(163, 163, 163);
+    border-right: 8px solid rgb(163, 163, 163);
+    border-bottom: 8px solid rgb(204, 204, 204);
+    border-left: 8px solid rgb(204, 204, 204);
+}
+
+button:hover, .selector-wrapper:hover {
+    box-sizing: border-box;
+    width: 165px;
+    height: 65px;
+    font-family:'Londrina Sketch', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 28px;
+    font-weight: 900;
+    color: rgb(197, 147, 57);
+    background-color: rgb(240, 239, 247);
+    border: 4px solid rgb(163, 163, 163);
+    border-radius: 10px;
+    padding: 10px;
 }
