@@ -1,5 +1,8 @@
+const buttons = document.querySelector('.buttons-wrapper');
 const colorSelector = document.querySelector('.selector-wrapper');
 const colorRandomizer = document.getElementById('randomizer');
+const eraser = document.getElementById('eraser');
+const sweeper = document.getElementById('sweeper');
 
 const rangeSlider = document.getElementById('dimension');
 const grid = document.querySelector('.grid-wrapper');
@@ -24,6 +27,16 @@ function insertGridCell(dim) {
     }
 }
 
+function setPressedButton(event) {
+    event.currentTarget.classList.add('pressed');
+
+    for (let button of buttons.children) {
+        if (event.currentTarget !== button) {
+            button.classList.remove('pressed');
+        }
+    }
+}
+
 window.addEventListener('DOMContentLoaded', () => {
     dim = 16;
     rangeSlider.previousElementSibling.textContent = `${dim} x ${dim}`;
@@ -43,18 +56,30 @@ rangeSlider.addEventListener('input', event => {
 
 colorSelector.addEventListener('input', event => {
     selectedColor = event.target.value;
-    event.target.style.backgroundColor = selectedColor;
+    setPressedButton(event);
 })
 
 colorRandomizer.addEventListener('click', event => {
-    event.target.classList.toggle('button-toggle');
-    // selectedColor = `rgb(${getRandomInt()}, ${getRandomInt()}, ${getRandomInt()})`;
+    setPressedButton(event);
+})
+
+eraser.addEventListener('click', event => {
+    selectedColor = 'rgb(240, 239, 247)';
+    setPressedButton(event);
+})
+
+sweeper.addEventListener('click', event => {
+    for (let cell of grid.children) {
+        cell.style.backgroundColor = 'rgb(240, 239, 247)';
+    }
+    setPressedButton(event);
 })
 
 grid.addEventListener('mouseover', event => {
-    // selectedColor = `rgb(${getRandomInt()}, ${getRandomInt()}, ${getRandomInt()})`;
-
     if (event.target !== event.currentTarget) {
+        if (colorRandomizer.className === 'pressed') {
+            selectedColor = `rgb(${getRandomInt()}, ${getRandomInt()}, ${getRandomInt()})`;
+        }
         event.target.style.backgroundColor = selectedColor;
     }
 })
