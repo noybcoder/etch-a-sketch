@@ -1,6 +1,7 @@
 const buttons = document.querySelector('.buttons-wrapper');
-const colorSelector = document.querySelector('.selector-wrapper');
-const colorRandomizer = document.getElementById('randomizer');
+const selector = document.querySelector('.selector-wrapper');
+const randomizer = document.getElementById('randomizer');
+const darkener = document.getElementById('darkener');
 const eraser = document.getElementById('eraser');
 const sweeper = document.getElementById('sweeper');
 
@@ -54,12 +55,16 @@ rangeSlider.addEventListener('input', event => {
     insertGridCell(dim);
 })
 
-colorSelector.addEventListener('input', event => {
+selector.addEventListener('input', event => {
     selectedColor = event.target.value;
     setPressedButton(event);
 })
 
-colorRandomizer.addEventListener('click', event => {
+randomizer.addEventListener('click', event => {
+    setPressedButton(event);
+})
+
+darkener.addEventListener('click', event => {
     setPressedButton(event);
 })
 
@@ -77,8 +82,10 @@ sweeper.addEventListener('click', event => {
 
 grid.addEventListener('mouseover', event => {
     if (event.target !== event.currentTarget) {
-        if (colorRandomizer.className === 'pressed') {
+        if (randomizer.className.includes('pressed')) {
             selectedColor = `rgb(${getRandomInt()}, ${getRandomInt()}, ${getRandomInt()})`;
+        } else if (selector.className.includes('pressed')) {
+            console.log(selectedColor);
         }
         event.target.style.backgroundColor = selectedColor;
     }
