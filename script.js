@@ -64,10 +64,6 @@ randomizer.addEventListener('click', event => {
     setPressedButton(event);
 })
 
-darkener.addEventListener('click', event => {
-    setPressedButton(event);
-})
-
 eraser.addEventListener('click', event => {
     selectedColor = 'rgb(240, 239, 247)';
     setPressedButton(event);
@@ -84,9 +80,7 @@ grid.addEventListener('mouseover', event => {
     if (event.target !== event.currentTarget) {
         if (randomizer.className.includes('pressed')) {
             selectedColor = `rgb(${getRandomInt()}, ${getRandomInt()}, ${getRandomInt()})`;
-        } else if (selector.className.includes('pressed')) {
-            console.log(selectedColor);
-        }
+        } 
         event.target.style.backgroundColor = selectedColor;
     }
 })
